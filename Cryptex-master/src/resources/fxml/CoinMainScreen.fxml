@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guicontrollers.CoinMainController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane fx:id="top" prefHeight="52.0" prefWidth="700.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="117.0" layoutX="71.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="71.0">
+                     <image>
+                        <Image url="@../../resources/images/CryptexLogoWithout.png" />
+                     </image>
+                  </ImageView>
+                  <BorderPane layoutX="235.0" layoutY="-2.0" prefHeight="52.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <JFXTextField fx:id="searchBar" focusColor="#405aa800" prefHeight="26.0" prefWidth="350.0" promptText="Search" style="-fx-border-color: black;" unFocusColor="#4d4d4d00" BorderPane.alignment="CENTER" />
+                     </center>
+                     <right>
+                        <MaterialDesignIconView fx:id="searchButton" glyphName="MAGNIFY" size="20" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
+                  <JFXHamburger fx:id="hamburger" layoutX="24.0" layoutY="16.0" onMouseClicked="#hamClick" onMouseEntered="#showHand" onMouseExited="#showDefault" />
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="menuOpen" prefHeight="650.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="infoPane" prefHeight="650.0" prefWidth="700.0" style="-fx-background-color: #00BAFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="37.0" layoutY="37.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7fdcff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <GridPane prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <AnchorPane prefHeight="463.0" prefWidth="269.0" style="-fx-background-color: white; -fx-border-color: black;">
+                                       <children>
+                                          <Label fx:id="coinNameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefWidth="280.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                             <font>
+                                                <Font name="System Bold" size="30.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="codeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="136.0" layoutY="83.0" style="-fx-text-fill: #00BAFF;" textFill="#00baff" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0">
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox alignment="CENTER" layoutY="124.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                             <children>
+                                                <ImageView fx:id="coinImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" style="-fx-padding: 10; -fx-background-color: black;">
+                                                   <image>
+                                                      <Image url="@../images/CryptexIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </HBox>
+                                          <AnchorPane layoutX="20.0" layoutY="291.0" prefHeight="234.0" prefWidth="260.0" style="-fx-background-color: #bfedff;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="295.20000000000005">
+                                             <children>
+                                                <Label fx:id="priceLabel" layoutX="20.0" layoutY="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="capLabel" layoutX="20.0" layoutY="45.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="volumeLabel" layoutX="20.0" layoutY="75.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="supplyLabel" layoutX="20.0" layoutY="105.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnIndex="1">
+                                       <children>
+                                          <LineChart fx:id="coinGraph" layoutX="14.0" layoutY="14.0" prefHeight="271.0" prefWidth="272.0" style="-fx-text-fill: white;" stylesheets="@../stylesheets/GraphStylesheet.css" title="Date vs Price" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </LineChart>
+                                          <GridPane alignment="CENTER" layoutY="470.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <JFXButton style="-fx-background-color: #00BAFF;" text="Daily" textFill="WHITE" />
+                                                <JFXButton style="-fx-background-color: #00BAFF;" text="Weekly" textFill="WHITE" GridPane.columnIndex="1" />
+                                                <JFXButton style="-fx-background-color: #00BAFF;" text="Monthly" textFill="WHITE" GridPane.columnIndex="2" />
+                                                <JFXButton style="-fx-background-color: #00BAFF;" text="Yearly" textFill="WHITE" GridPane.columnIndex="3" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                        <JFXButton layoutX="634.0" layoutY="21.0" onMouseClicked="#closeInfo" style="-fx-background-color: #00BAFF;" text="X" textFill="WHITE" AnchorPane.rightAnchor="12.399999999999999" AnchorPane.topAnchor="21.0" />
+                     </children>
+                  </AnchorPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <AnchorPane fx:id="mainAnch" prefHeight="650.0" prefWidth="485.0" style="-fx-background-color: #00BAFF;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pagination fx:id="coinPage" maxPageIndicatorCount="5" pageCount="0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-text-size: 30;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <TableView fx:id="tableView" layoutX="270.0" layoutY="245.0" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 17px;" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="likeCol" minWidth="30.0" prefWidth="60.0" resizable="false" text="Like" />
+                                    <TableColumn fx:id="numCol" editable="false" prefWidth="50.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="#" />
+                                    <TableColumn fx:id="codeCol" editable="false" prefWidth="85.0" resizable="false" sortable="false" style="-fx-alignment: CENTER; -fx-padding: 5;" text="Code" />
+                                    <TableColumn fx:id="nameCol" editable="false" prefWidth="75.0" resizable="false" sortable="false" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="Name" />
+                                    <TableColumn fx:id="priceCol" editable="false" prefWidth="75.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Price" />
+                                    <TableColumn fx:id="capCol" editable="false" prefWidth="75.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Market Cap" />
+                                    <TableColumn fx:id="changeCol" editable="false" prefWidth="88.0" resizable="false" sortable="false" style="-fx-alignment: CENTER;" text="Change(24h)" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <JFXButton fx:id="refreshButton" layoutX="14.0" layoutY="604.0" onAction="#refreshClicked" style="-fx-background-color: black;" text="Refresh" textFill="WHITE" AnchorPane.bottomAnchor="13.600000000000023" AnchorPane.leftAnchor="14.0" />
+                              <MenuButton fx:id="sortButton" layoutX="625.0" layoutY="606.0" mnemonicParsing="false" onAction="#sortClicked" popupSide="TOP" style="-fx-background-color: black;" text="Sort" textFill="WHITE" AnchorPane.bottomAnchor="15.600000000000023" AnchorPane.rightAnchor="14.200000000000003">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                                    <MenuItem mnemonicParsing="false" text="Action 2" />
+                                 </items>
+                              </MenuButton>
+                              <Label fx:id="sortLabel" layoutX="594.0" layoutY="615.0" AnchorPane.bottomAnchor="17.00000000000002" AnchorPane.rightAnchor="80.0">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <AnchorPane fx:id="drawer" layoutX="-200.0" layoutY="52.0" prefHeight="649.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="52.0">
+         <children>
+            <BorderPane fx:id="menuBorder" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

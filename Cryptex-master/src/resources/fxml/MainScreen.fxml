@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guicontrollers.MainScreenController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="350.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="130.0" fitWidth="304.0" layoutX="23.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/images/CryptexLogoWith.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="screenUp" onKeyPressed="#keyPressed" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="119.0" layoutY="14.0" text="Sign Up" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="username1" alignment="CENTER" focusColor="WHITE" layoutX="107.0" layoutY="118.0" promptText="Username" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#00baff" />
+            <JFXTextField fx:id="fullName" alignment="CENTER" focusColor="WHITE" layoutX="107.0" layoutY="81.00000000000003" onKeyPressed="#keyPressed" promptText="Full name" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" unFocusColor="#00baff" AnchorPane.bottomAnchor="293.4" />
+            <JFXPasswordField fx:id="password1" alignment="CENTER" focusColor="WHITE" layoutX="107.0" layoutY="155.0" onKeyPressed="#keyPressed" promptText="Password" style="-fx-text-fill: white; -fx-prompt-text-fill: white;" unFocusColor="#00baff" />
+            <JFXPasswordField fx:id="passwordConfirm" alignment="CENTER" focusColor="WHITE" layoutX="107.0" layoutY="193.0" onKeyPressed="#keyPressed" promptText="Confirm password" style="-fx-text-fill: white; -fx-prompt-text-fill: white;" unFocusColor="#00baff" />
+            <Label fx:id="error2" alignment="CENTER" layoutX="161.0" layoutY="243.0" prefHeight="18.0" prefWidth="155.0" textFill="RED" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <JFXButton fx:id="buttonIn1" buttonType="RAISED" layoutX="86.0" layoutY="282.0" onAction="#inClicked" prefWidth="80.0" style="-fx-background-color: #00baffff;" text="Sign In" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_KEY" size="15" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="buttonUp1" buttonType="RAISED" layoutX="184.0" layoutY="282.0" onAction="#upClicked" prefWidth="80.0" style="-fx-background-color: #00baffff;" text="Sign Up" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="15" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="screenIn" layoutX="350.0" prefHeight="400.0" prefWidth="350.0" style="-fx-background-color: #00baffff;">
+         <children>
+            <Label layoutX="126.0" layoutY="14.0" text="Sign In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="username" alignment="CENTER" focusColor="BLACK" layoutX="107.0" layoutY="106.0" onKeyPressed="#keyPressed" promptText="Username" style="-fx-text-fill: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE" />
+            <JFXButton fx:id="buttonIn" buttonType="RAISED" layoutX="86.0" layoutY="282.0" onAction="#inClicked" prefWidth="80.0" style="-fx-background-color: black;" text="Sign In" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_KEY" size="15" />
+               </graphic></JFXButton>
+            <JFXButton fx:id="buttonUp" buttonType="RAISED" layoutX="184.0" layoutY="282.0" onAction="#upClicked" prefWidth="80.0" style="-fx-background-color: black;" text="Sign Up" textFill="WHITE">
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT_PLUS" size="15" />
+               </graphic></JFXButton>
+            <JFXPasswordField fx:id="password" alignment="CENTER" focusColor="BLACK" layoutX="107.0" layoutY="174.0" onKeyPressed="#keyPressed" promptText="Password" style="-fx-text-fill: white; -fx-prompt-text-fill: white;" unFocusColor="WHITE" />
+            <Label fx:id="error" alignment="CENTER" layoutY="233.0" textFill="RED" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT" layoutX="76.0" layoutY="126.0" size="20" />
+            <MaterialDesignIconView fill="WHITE" glyphName="KEY" layoutX="76.0" layoutY="194.0" size="20" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

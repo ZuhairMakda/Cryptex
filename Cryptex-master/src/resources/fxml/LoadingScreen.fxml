@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="loadScreen" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guicontrollers.LoadController">
+    <children>
+        <ImageView fitHeight="153.0" fitWidth="289.0" layoutX="206.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../resources/images/CryptexLogoWith.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="486.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXProgressBar fx:id="loadingBar" layoutX="250.0" layoutY="232.0" progress="0.0" stylesheets="@../Stylesheets/LoadStylesheet.css" />
+      <Label fx:id="loadInfo" alignment="CENTER" contentDisplay="CENTER" layoutY="245.0" prefHeight="18.0" prefWidth="156.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    </children>
+</AnchorPane>
